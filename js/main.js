@@ -31,6 +31,8 @@ if($number>1000){
 console.log("Hola chicxs")
 
 
+// USUARIOS Y CLAVES
+
 // admin: admin:admin123
 // user1: carlos:carlos123
 // user2: david:David123
