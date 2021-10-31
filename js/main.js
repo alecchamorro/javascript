@@ -1,55 +1,61 @@
-// ACTIVIDAD CLASE 2
+let $num1;
+let $resultado=0;
 
-const $edad= Number(prompt("ingrese tu edad"));
-const $user= prompt("ingrese Hola");
-const $number= Number(prompt("ingrese un numero mayor a 1000"));
+while($num1 != 0){
+    $num1 =Number (prompt("ingrese un numero"))
+    $resultado=$resultado +$num1;
+
+}
+alert("el resultado de la suma es "+ $resultado)
 
 
-if($user=="Hola") {
-    console.log("bienvenido " + $user);
+
+let $num2= Number(prompt("ingrese un numero"));
+for (let i=0; i<=$num2; i+=2){
+    console.log(i);
 }
 
-else{
-    console.log("bienvenido usuario invitado")
+
+
+
+let $entrada = prompt("Escoja un GENERO: rock, electro, reggaeton");
+while ($entrada !="ESC"){
+    switch ($entrada) {
+        case "rock":
+            alert ("excelente, buen gusto");
+            break;
+        case "electro":
+            alert("No es mi tipo, pero bien")
+            break;
+            case "reggaeton":
+                alert ("epa");
+                break;
+        default:
+            alert("Mmm Te confundiste pa")
+            break;
+    }
+
+$entrada = prompt ("Escoja un GENERO: rock, electro, reggaeton");
+
 }
 
-if($edad<10) {
-    console.log("no podes ingresar, sos menor")}
-
-else if($edad>50) {
-    console.log("acceso permitido")
-}
-
-else {
-    console.log("entre 10 y 50")
-}
-
-if($number>1000){
-    console.log("numero mayor a 1000")
-}
-
-console.log("Hola chicxs")
 
 
-// USUARIOS Y CLAVES
-
-// admin: admin:admin123
-// user1: carlos:carlos123
-// user2: david:David123
-// user3: ale:
 
 
-// const $usuario_valido = ($user=="carlos" && $pass=="carlos123") || ($user=="david" && $pass=="david123") || ($user=="ale" && $pass=="ale123")
-// const $admin=($user=="admin" && $pass=="admin123")
-
-// const $user= prompt("ingrese usuario");
-// const $pass= prompt("ingrese clave");
 
 
-// if ($admin) {
-//     console.log("bienvenido dios");
-//  } else if ($usuario_valido) {
-//         console.log("bienvenido "+$user);
-// } else{
-//     console.log("datos incorrectos");
+// while (iteracion.toLoweCase()=="si") {
+
+//     $num1 =Number(prompt("ingrese el primer numero de la operacion"));
+//     $num2 =Number(prompt("ingrese el segundo numero de la operacion"));
+//     $operador =prompt("ingrese la operacion a realizar");
+//     $resultado
+//     $iteracion
+
+//     switch(operador) {
+//         case "+": resultado =$num1 + $num2
+
 //     }
+    
+//}
