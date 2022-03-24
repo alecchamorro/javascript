@@ -35,7 +35,7 @@ while ($entrada !="ESC"){
             break;
     }
 
-$entrada = prompt ("Escoja un GENERO: rock, electro, reggaeton");
+$entrada = prompt ("Escoja un GENERO: rock, electro, reggaeton. Para salir escribir ESC");
 
 }
 
