@@ -38,3 +38,24 @@ while ($entrada !="ESC"){
 $entrada = prompt ("Escoja un GENERO: rock, electro, reggaeton");
 
 }
+
+
+
+
+
+
+
+// while (iteracion.toLoweCase()=="si") {
+
+//     $num1 =Number(prompt("ingrese el primer numero de la operacion"));
+//     $num2 =Number(prompt("ingrese el segundo numero de la operacion"));
+//     $operador =prompt("ingrese la operacion a realizar");
+//     $resultado
+//     $iteracion
+
+//     switch(operador) {
+//         case "+": resultado =$num1 + $num2
+
+//     }
+    
+// }
