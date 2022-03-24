@@ -18,7 +18,7 @@ for (let i=0; i<=$num2; i+=2){
 
 
 
-let $entrada = prompt("Escoja un GENERO: rock, electro, reggaeton");
+let $entrada = prompt("Escoja un GENERO: rock, electro, reggaeton. Para salir escribir ESC");
 while ($entrada !="ESC"){
     switch ($entrada) {
         case "rock":
