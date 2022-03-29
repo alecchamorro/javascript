@@ -1,61 +1,54 @@
-let $num1;
-let $resultado=0;
-
-while($num1 != 0){
-    $num1 =Number (prompt("ingrese un numero"))
-    $resultado=$resultado +$num1;
-
-}
-alert("el resultado de la suma es "+ $resultado)
-
-
-
-let $num2= Number(prompt("ingrese un numero"));
-for (let i=0; i<=$num2; i+=2){
-    console.log(i);
+function saludar() {
+    alert("Calculadora");
 }
 
+saludar();
 
+function sumar(x = 0, y = 0) {
+    return x + y;
+    console.log("Esto no se ejecuta");
+   }
 
+function restar(x, y) {
+    const resultado = x - y;
+    alert(`El resultado de ${x}-${y} es ${resultado}`);
+    return resultado;
+}
+function multiplicar(x, y) {
+    const resultado = x * y;
+    alert(`El resultado de ${x}*${y} es ${resultado}`);
+}
+function dividir(x, y) {
+    const resultado = x / y;
+    alert(`El resultado de ${x}/${y} es ${resultado}`);
+}
 
-let $entrada = prompt("Escoja un GENERO: rock, electro, reggaeton. Para salir escribir ESC");
-while ($entrada !="ESC"){
-    switch ($entrada) {
-        case "rock":
-            alert ("excelente, buen gusto");
-            break;
-        case "electro":
-            alert("No es mi tipo, pero bien")
-            break;
-            case "reggaeton":
-                alert ("epa");
-                break;
-        default:
-            alert("Mmm Te confundiste pa")
-            break;
-    }
+const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
+1 - Sumar
+2 - Restar
+3 - Multiplicar
+4 - Dividir`));
 
-$entrada = prompt ("Escoja un GENERO: rock, electro, reggaeton. Para salir escribir ESC");
+const numero1 = Number(prompt("Ingresa el primer número"));
+const numero2 = Number(prompt("Ingresa el segundo número"));
 
+switch (operacion) {
+    case 1:
+        const suma = sumar(numero1, numero2);
+        alert(`El resultado de ${numero1}+${numero2} es ${suma}`);
+        break;
+    case 2:
+        const resta = restar(numero1, numero2);
+        console.log(resta);
+        break;
+    case 3:
+        multiplicar(numero1, numero2);
+        break;
+    case 4:
+        dividir(numero1, numero2);
+        break;
+    default:
+        break;
 }
 
 
-
-
-
-
-
-// while (iteracion.toLoweCase()=="si") {
-
-//     $num1 =Number(prompt("ingrese el primer numero de la operacion"));
-//     $num2 =Number(prompt("ingrese el segundo numero de la operacion"));
-//     $operador =prompt("ingrese la operacion a realizar");
-//     $resultado
-//     $iteracion
-
-//     switch(operador) {
-//         case "+": resultado =$num1 + $num2
-
-//     }
-    
-// }s
