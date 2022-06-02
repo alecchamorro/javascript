@@ -1,54 +1,23 @@
-function saludar() {
-    alert("Calculadora");
-}
-
-saludar();
-
-function sumar(x = 0, y = 0) {
-    return x + y;
-    console.log("Esto no se ejecuta");
-   }
-
-function restar(x, y) {
-    const resultado = x - y;
-    alert(`El resultado de ${x}-${y} es ${resultado}`);
-    return resultado;
-}
-function multiplicar(x, y) {
-    const resultado = x * y;
-    alert(`El resultado de ${x}*${y} es ${resultado}`);
-}
-function dividir(x, y) {
-    const resultado = x / y;
-    alert(`El resultado de ${x}/${y} es ${resultado}`);
-}
-
-const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
-1 - Sumar
-2 - Restar
-3 - Multiplicar
-4 - Dividir`));
-
-const numero1 = Number(prompt("Ingresa el primer número"));
-const numero2 = Number(prompt("Ingresa el segundo número"));
-
-switch (operacion) {
-    case 1:
-        const suma = sumar(numero1, numero2);
-        alert(`El resultado de ${numero1}+${numero2} es ${suma}`);
-        break;
-    case 2:
-        const resta = restar(numero1, numero2);
-        console.log(resta);
-        break;
-    case 3:
-        multiplicar(numero1, numero2);
-        break;
-    case 4:
-        dividir(numero1, numero2);
-        break;
-    default:
-        break;
-}
+let $entrada = prompt("Escoja un GENERO:\n -Rock\n -Electro\n -Reggaeton\n Para salir escribir SALIR");
+while ($entrada !="SALIR")
+    switch ($entrada) {
+        case "Rock":
+            alert ("excelente, buen gusto")
+            break;
+        case "Electro":
+            alert("No es mi tipo, pero bien")
+            break;
+            case "Reggaeton":
+                alert ("epa");
+                break;
+        default:
+            alert("Mmm opcion invalida")
+            break;
+     }
+    if (ingreso == "SALIR") alert("Gracias, que tengas un buen día");
 
 
+let ingreso = prompt(
+    "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
+  );
+  if (ingreso == "SALIR") alert("Gracias, que tengas un buen día");
