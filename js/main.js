@@ -25,8 +25,8 @@ let ingreso = prompt(
         alert("mm ese genero no lo conozco");
         break;
     }
-    // ingreso = prompt(
-    //   "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
-    // );
+    ingreso = prompt(
+      "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
+    );
     if (ingreso == "SALIR") alert("Excelente gustos! saludos");
   }
