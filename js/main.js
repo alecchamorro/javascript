@@ -1,5 +1,5 @@
-let $entrada1 = prompt("Escoja un GENERO:\n -Rock\n -Electro\n -Reggaeton\n Para salir escribir SALIR");
-while ($salida !="SALIR")
+let $entrada = prompt("Escoja un GENERO:\n -Rock\n -Electro\n -Reggaeton\n Para salir escribir SALIR");
+while ($entrada !="SALIR")
     switch ($entrada) {
         case "Rock":
             alert ("excelente, buen gusto")
@@ -14,10 +14,10 @@ while ($salida !="SALIR")
             alert("Mmm opcion invalida")
             break;
      }
-    if ($salida == "SALIR") alert("Gracias, que tengas un buen día");
+    if ($entrada == "SALIR") alert("Gracias, que tengas un buen día");
 
 
 let $entrada = prompt(
-    "Escoja un GENERO:\n -Rock\n -Electro\n -Reggaeton\n Para salir escribir SALIR"
+    "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
   );
-  if (ingreso == "SALIR") alert("Gracias, que tengas un buen día");
+  if ($entrada == "SALIR") alert("Gracias, que tengas un buen día");
