@@ -1,23 +1,32 @@
-let $entrada = prompt("Escoja un GENERO:\n -Rock\n -Electro\n -Reggaeton\n Para salir escribir SALIR");
-while ($entrada !="SALIR")
-    switch ($entrada) {
-        case "Rock":
-            alert ("excelente, buen gusto")
-            break;
-        case "Electro":
-            alert("No es mi tipo, pero bien")
-            break;
-            case "Reggaeton":
-                alert ("epa");
-                break;
-        default:
-            alert("Mmm opcion invalida")
-            break;
-     }
-    if ($entrada == "SALIR") alert("Gracias, que tengas un buen día");
-
-
-let $entrada = prompt(
-    "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
+let ingreso = prompt(
+    "Escoja un genero \n rock \n pop \n cumbia \n reggaeton \n electro\n\n Para finalizar ingrese SALIR"
   );
-  if ($entrada == "SALIR") alert("Gracias, que tengas un buen día");
+  if (ingreso == "SALIR") alert("Genial, buenos gustos! saludos");
+  
+  while (ingreso != "SALIR") {
+    switch (ingreso) {
+      case "rock":
+        alert("excelente gusto!");
+        break;
+      case "pop":
+        alert("bien, buena musica");
+        break;
+      case "cumbia":
+        alert("algo movida va bien!");
+        break;
+      case "reggaeton":
+        alert("epa, es la que va");
+        break;
+      case "electro":
+        alert("excelente");
+        break;
+  
+      default:
+        alert("mm no conozco ese genero");
+        break;
+    }
+    ingreso = prompt(
+      "Escoja un genero \n rock \n pop \n cumbia \n reggaeton \n electro\n\n Para finalizar ingrese SALIR"
+    );
+    if (ingreso == "SALIR") alert("Genial, buenos gustos! saludos");
+  }
