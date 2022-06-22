@@ -29,10 +29,46 @@ if (admin) {
 
 } else if (usuario_valido) {
        alert("bienvenido "+user);
-   
-       let ingreso = prompt(
-         "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente \n\n Para salir ingrese SALIR"
-       );
+
+      //  const menu= [
+      //   {
+      //     id: 1,
+      //     tipo: "cafe",
+      //     adicional: "sin adicional",
+      //     medida: "grande",
+      //     precio: 180,
+      //   },
+      //   {
+      //     id: 2,
+      //     tipo: "cafe con leche",
+      //     adicional: "leche",
+      //     medida: "grande",
+      //     precio: 220,
+      //   },
+      //   {
+      //     id: 3,
+      //     tipo: "te",
+      //     adicional: "te negro",
+      //     medida: "chica",
+      //     precio: 150,
+      //   },
+      //   {
+      //     tipo: "te con leche",
+      //     adicional: "leche",
+      //     medida: "mediana",
+      //     precio: 200,
+      //   },
+      //     {
+      //     id: 4,
+      //     tipo: "agua caliente",
+      //     adicional: "sin adicional",
+      //     medida: "grande",
+      //     precio: 50,
+      // }
+      // ]
+
+    
+       let ingreso = prompt("Ingresa una opción, Para salir ingrese SALIR \n\n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente");
        if (ingreso == "SALIR") alert("Gracias, que tengas un buen día");
        while (ingreso != "SALIR" && ingreso !="salir" && "Salir") {
          switch (ingreso) {
@@ -56,7 +92,7 @@ if (admin) {
              break;
          }
          ingreso = prompt(
-           "Ingresa una opción \n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
+           "Ingresa una opción, Para salir ingrese SALIR \n\n 1-Café solo \n 2-Café con leche \n 3-Té \n 4-Té con leche \n 5-Agua caliente"
          );
          if (ingreso == "SALIR") alert("Gracias, que tengas un buen día");
        } 
@@ -64,5 +100,3 @@ if (admin) {
 } else{
    alert("datos incorrectos");
    } 
-
-
