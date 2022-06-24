@@ -1,11 +1,30 @@
 body{
+    background-image: url(../img/Javascript-by-SoyHorizonte.jpg);
+  }
+  
+  h1{
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-h1{
+   
     font-size: 30px;
     text-align: center;
-}
+  }
+  
+  h2{
+    text-align: center;
+  
+  }
+  
+  
+  #mensaje{
+    font-style: oblique;
+  }
+  
+  
+  .button{
+    background: cornflowerblue;
+    margin-bottom: 15px;
+    box-shadow: #46eefa;
+  }
