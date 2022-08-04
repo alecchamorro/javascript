@@ -4,9 +4,11 @@ function saludar() {
 
 saludar();
 
-function sumar(x = 0, y = 0) 
+function sumar(x = 0, y = 0) {
   return x + y;
   console.log("Esto no se ejecuta");
+   }
+
 function restar(x, y) {
   const resultado = x - y;
   alert(`El resultado de ${x}-${y} es ${resultado}`);
@@ -21,11 +23,11 @@ function dividir(x, y) {
   alert(`El resultado de ${x}/${y} es ${resultado}`);
 }
 
-const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?\n
-1 - Sumar \n
-2 - Restar\n
-3 - Multiplicar\n
-4 - Dividir\n`));
+const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
+1 - Sumar
+2 - Restar
+3 - Multiplicar
+4 - Dividir`));
 
 const numero1 = Number(prompt("Ingresa el primer número"));
 const numero2 = Number(prompt("Ingresa el segundo número"));
@@ -48,3 +50,5 @@ switch (operacion) {
   default:
     break;
 }
+
+
