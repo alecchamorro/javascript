@@ -4,23 +4,26 @@ function saludar() {
 
 saludar();
 
-function sumar(x = 0, y = 0) {
-  return x + y;
-  console.log("Esto no se ejecuta");
+function sumar(x, y) {
+  const resultado = x + y;
+  // alert(`El resultado de ${x}+${y} es ${resultado}`); pd Cierto que el return retorna sin necesidad de un alert xd
+  return resultado;
    }
 
 function restar(x, y) {
   const resultado = x - y;
-  alert(`El resultado de ${x}-${y} es ${resultado}`);
+  // alert(`El resultado de ${x}-${y} es ${resultado}`);
   return resultado;
 }
 function multiplicar(x, y) {
   const resultado = x * y;
-  alert(`El resultado de ${x}*${y} es ${resultado}`);
+  // alert(`El resultado de ${x}*${y} es ${resultado}`);
+  return resultado;
 }
 function dividir(x, y) {
   const resultado = x / y;
-  alert(`El resultado de ${x}/${y} es ${resultado}`);
+  // alert(`El resultado de ${x}/${y} es ${resultado}`);
+  return resultado
 }
 
 const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
@@ -50,5 +53,4 @@ switch (operacion) {
   default:
     break;
 }
-
 
