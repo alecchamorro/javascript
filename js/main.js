@@ -7,7 +7,7 @@ saludar();
 
 
 function sumar(x, y) {
-    const resultado = x - y;
+    const resultado = x + y;
     return alert(`El resultado de ${x}+${y} es ${resultado}`);
 }
 function restar(x, y) {
