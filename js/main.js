@@ -4,12 +4,10 @@ function saludar() {
 
 saludar();
 
-
-
 function sumar(x, y) {
     const resultado = x + y;
     return alert(`El resultado de ${x}+${y} es ${resultado}`);
-}
+   }
 function restar(x, y) {
     const resultado = x - y;
     return alert(`El resultado de ${x}-${y} es ${resultado}`);
@@ -23,41 +21,40 @@ function dividir(x, y) {
     return alert(`El resultado de ${x}/${y} es ${resultado}`);
 }
 
-
-do{
-const operacion = prompt(`Bienvenido, que operacion queres realizar?\n
-1 - Sumar\n
-2 - Restar\n
-3 - Multiplicar\n
-4 - Dividir\n`);
-
-const numero1 = prompt("Ingresa el primer número");
-const numero2 = prompt("Ingresa el segundo número");
+for (let i = 1; i < 10; i++) {
+    
+const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
+1 - Sumar
+2 - Restar
+3 - Multiplicar
+4 - Dividir\n\nPara salir del bucle ingrese el numero 0`));
 
 
-if (operacion == "SALIR") {
-    alert("gracias que tenga un buen dia");}
+const numero1 = Number(prompt("Ingresa el primer número"));
+const numero2 = Number(prompt("Ingresa el segundo número"));
 
-  else{
 switch (operacion) {
-  case "1":
+  case 1:
     sumar(numero1, numero2);
     break;
-  case "2":
+  case 2:
     restar(numero1, numero2);
     break;
-  case "3":
+  case 3:
     multiplicar(numero1, numero2);
     break;
-  case "4":
+  case 4:
     dividir(numero1, numero2);
     break;
-    
   default:
     break;
     
 }
-}
-}while(operacion !== "SALIR");
+if (operacion == 0) {
+    
+    alert("gracias por utilizar la app")
+   break
+}}
+
 
 
