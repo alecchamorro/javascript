@@ -38,11 +38,11 @@ const numero2 = Number(prompt("Ingresa el segundo número"));
 switch (operacion) {
   case 1:
     const suma = sumar(numero1, numero2);
-    alert(`El resultado de ${numero1}+${numero2} es ${suma}`);
+    // alert(`El resultado de ${numero1}+${numero2} es ${suma}`);
     break;
   case 2:
     const resta = restar(numero1, numero2);
-    console.log(resta);
+  return resta
     break;
   case 3:
     multiplicar(numero1, numero2);
