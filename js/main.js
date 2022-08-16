@@ -1,60 +1,61 @@
-function saludar() {
-  alert("Calculadora");
-}
 
-saludar();
+/*
+const deseaContinuar =true
 
-function sumar(x, y) {
-    const resultado = x + y;
-    return alert(`El resultado de ${x}+${y} es ${resultado}`);
-   }
-function restar(x, y) {
-    const resultado = x - y;
-    return alert(`El resultado de ${x}-${y} es ${resultado}`);
-}
-function multiplicar(x, y) {
-    const resultado = x * y;
-    return alert(`El resultado de ${x}*${y} es ${resultado}`);
-}
-function dividir(x, y) {
-    const resultado = x / y;
-    return alert(`El resultado de ${x}/${y} es ${resultado}`);
-}
 
-for (let i = 1; i < 10; i++) {
+do {
+    deseaContinuar
+    alert("Bienvenido")
+} while (confirm("queres seguir siendo bienvenido?"));{
+    alert("perfecto, pusiste que no, no queres continuuar")
+}
+// si descuento = CUPON, ENTONCES aplica el reduce a la suma total, SI NO alert, cupon invalido, aplica igual la formula sin PERO con el reduce a 0
+
+*/
+const productos = [{id: 1, producto: "cerveza", precio: 300 },
+                  { id: 2,  producto: "fernet", precio: 1300 },
+                  { id: 3,  producto: "smirnoff", precio: 980 },
+                  { id: 4,  producto: "absolut", precio: 2500 },];
+
+let carriño = []
+do {
+
+   let descuento = 0;
+    let carro =(Number(prompt("productos en oferta:\n\n1 - cerveza  $300\n2 - fernet  $1300\n3 - smirnoff  $980\n4 - absolut  $2500\ningrese el id del producto")));
+     
+    const carrito = productos.find(producto => producto.id === carro);
+    carriño.push(carrito)
     
-const operacion = Number(prompt(`Bienvenideo, que operacion queres realizar?
-1 - Sumar
-2 - Restar
-3 - Multiplicar
-4 - Dividir\n\nPara salir del bucle ingrese el numero 0`));
+    var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, descuento);
+
+} while (confirm("¿Desea seguir agregando productos?"));
 
 
-const numero1 = Number(prompt("Ingresa el primer número"));
-const numero2 = Number(prompt("Ingresa el segundo número"));
 
-switch (operacion) {
-  case 1:
-    sumar(numero1, numero2);
-    break;
-  case 2:
-    restar(numero1, numero2);
-    break;
-  case 3:
-    multiplicar(numero1, numero2);
-    break;
-  case 4:
-    dividir(numero1, numero2);
-    break;
-  default:
-    break;
-    
-}
-if (operacion == 0) {
-    
-    alert("gracias por utilizar la app")
-   break
-}}
+
+
+
+
+alert("El costa total de su pedido es de $"+ sumatotal)
+console.log(carriño);
+
+
+/*  let voucher = -200
+    const cupon= prompt("ingresa el cupon de descuento").toLowerCase() 
+
+
+    if (cupon == "cupon200") {
+   
+        var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, voucher);
+        alert("¡CUPON VALIDO, TIENE $200 DE DESCUENTO!\n\nEl costa total de su pedido es de $"+ sumatotal)
+
+
+    } else {
+
+        var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
+        alert("¡CUPON INVALIDO!\n\nEl costa total de su pedido es de $"+ sumatotal)
+    }
+*/
 
 
 
