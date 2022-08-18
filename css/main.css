@@ -1,11 +1,52 @@
 body{
-  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-image:url(https://previews.123rf.com/images/gurza/gurza1403/gurza140300009/27485562-la-tienda-de-bebidas-alcoh%C3%B3licas-vector.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-h1{
+h1, h2, .precio, .card{
+  box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
+-webkit-box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
+-moz-box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
+}
+
+.titulo{
+  color: white;
+  box-shadow: -4px 19px 26px 7px rgba(0,0,0,0.29);
+  -webkit-box-shadow: -4px 19px 26px 7px rgba(0,0,0,0.29);
+  -moz-box-shadow: -4px 19px 26px 7px rgba(0,0,0,0.29);
+  text-align: center;
+  font-size: 30px;
+}
+
+h1, h2{
   font-size: 30px;
   text-align: center;
+  background-color:white;
+  border-radius: 2px 30px 30px 30px;
+  color: #FFFFFF;
+  background: #333333;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+  color: #FFFFFF;
+  background: #333333;
+  
+}
+
+.precio{
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 2px 30px 30px 30px;
+}
+
+.card{
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 2px 30px 30px 15px;
+
 }

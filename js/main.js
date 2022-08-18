@@ -14,10 +14,10 @@ do {
 */
 alert("ingresa CUPON200 al finalizar la compra para tener $200 de descuento")
 
-const productos = [{id: 1, producto: "cerveza", precio: 300 },
-                  { id: 2,  producto: "fernet", precio: 1300 },
-                  { id: 3,  producto: "smirnoff", precio: 980 },
-                  { id: 4,  producto: "absolut", precio: 2500 },];
+const productos = [{id: 1, producto: "cerveza", nombre:"Cerveza Miller 500mm", precio: 300 },
+                  { id: 2,  producto: "fernet", nombre:"Fernet Branca 750mm", precio: 1300 },
+                  { id: 3,  producto: "smirnoff", nombre:"Vodka Smirnoff 700mm", precio: 980 },
+                  { id: 4,  producto: "absolut", nombre:"Vodka Absolut importado 750mm", precio: 2500 },];
 
 let carriño = []
 do {
@@ -27,47 +27,49 @@ do {
      
     const carrito = productos.find(producto => producto.id === carro);
     carriño.push(carrito)
-    
-    // var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, descuento);
+
+    // const divs = document.getElementsByTagName("div"); //no lo usamos ya que no apuntamos a algo ya creado en html
 
 } while (confirm("¿Desea seguir agregando productos?"));
+for (const producto of carriño) {
+    let contenedor = document.createElement("div");
+    //Definimos el innerHTML del elemento con una plantilla de texto
+    contenedor.innerHTML = `<div class="card" 
+    <h3> ID: ${producto.producto}</h3>
+    <p>  Producto: ${producto.nombre}</p>
+    <b> $ ${producto.precio}</b>
+    </div>`;
+    document.body.appendChild(contenedor);
+}
 
 let voucher = -200
 const cupon= prompt("ingresa el cupon de descuento").toLowerCase() 
 
 
 if (cupon == "cupon200") {
-
-    var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, voucher);
+// cuando aplica el cupon valido
+    const sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, voucher);
     alert("¡CUPON VALIDO, TIENE $200 DE DESCUENTO!\n\nEl costa total de su pedido es de $"+ sumatotal)
+    let precioDescuento = document.createElement("div")
 
+    precioDescuento.innerHTML = `<div class="precio" 
+    <h2> Costo TOTAL $ ${sumatotal} CUPON200 le genero un descuento de $200, gracias por aplicarlo</h2>
+    `
+    document.body.appendChild(precioDescuento);
 
 } else {
-
-    var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
+// Cuando aplica el cupon invalido
+    const sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
     alert("¡CUPON INVALIDO!\n\nEl costa total de su pedido es de $"+ sumatotal)
+
+    let precioDescuento = document.createElement("div")
+    precioDescuento.innerHTML = `<div class="precio" 
+    <h2> Costo TOTAL $ ${sumatotal} Gracias por la compra</h2>
+    `
+    document.body.appendChild(precioDescuento);
 }
 
-// alert("El costa total de su pedido es de $"+ sumatotal)
+
 console.log(carriño);
-
-/* 
- let voucher = -200
-    const cupon= prompt("ingresa el cupon de descuento").toLowerCase() 
-
-
-    if (cupon == "cupon200") {
-   
-        var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, voucher);
-        alert("¡CUPON VALIDO, TIENE $200 DE DESCUENTO!\n\nEl costa total de su pedido es de $"+ sumatotal)
-
-
-    } else {
-
-        var sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
-        alert("¡CUPON INVALIDO!\n\nEl costa total de su pedido es de $"+ sumatotal)
-    }
-*/
-
 
 
