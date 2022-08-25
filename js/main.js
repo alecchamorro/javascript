@@ -1,75 +1,70 @@
+// evento Click, sobre todos los botones creados con la clase .button
+const clickbutton = document.querySelectorAll(`.button`)
+// Evento creado para el carrito de compras
+const tbody = document.querySelector(`.tbody`)
 
-/*
-const deseaContinuar =true
+// Recorremos  
+clickbutton.forEach(btn =>{
+  btn.addEventListener (`click`,addToCarritoItem)
+})
+
+// array de objetos
+let carrito = []
 
 
-do {
-    deseaContinuar
-    alert("Bienvenido")
-} while (confirm("queres seguir siendo bienvenido?"));{
-    alert("perfecto, pusiste que no, no queres continuuar")
-}
-// si descuento = CUPON, ENTONCES aplica el reduce a la suma total, SI NO alert, cupon invalido, aplica igual la formula  PERO con el reduce a 0
+// funcion para capturar informacion del HTML
+function addToCarritoItem(e) {
+  const button = e.target // capturamos la informacion de todos los botones
+  const item = button.closest(`.card`)//closest captura el contentedor mas cercano a .card, es el contenedor padre de mi producto
+  const itemTitle = item.querySelector(`.card-title`).textContent;//captura el titulo del item, es la unica clase con titulo (textContent, es para obtener el contenido del queryS)
+  const itemPrice = item.querySelector (`.precio`).textContent // al igual que el titulo, capturamos la clase .precio con el text content agarramos el precio y lo retornamos
+  const itemImg = item.querySelector (`.card-img-top`).src //.src encuentra el contenido dentro de la etiqueta, en este caso busco retornar la imagen
 
-*/
-alert("ingresa CUPON200 al finalizar la compra para tener $200 de descuento")
-
-const productos = [{id: 1, producto: "cerveza", nombre:"Cerveza Miller 500mm", precio: 300 },
-                  { id: 2,  producto: "fernet", nombre:"Fernet Branca 750mm", precio: 1300 },
-                  { id: 3,  producto: "smirnoff", nombre:"Vodka Smirnoff 700mm", precio: 980 },
-                  { id: 4,  producto: "absolut", nombre:"Vodka Absolut importado 750mm", precio: 2500 },];
-
-let carriño = []
-do {
-
-//    let descuento = 0;
-    let carro =(Number(prompt("productos en oferta:\n\n1 - cerveza  $300\n2 - fernet  $1300\n3 - smirnoff  $980\n4 - absolut  $2500\ningrese el id del producto")));
-     
-    const carrito = productos.find(producto => producto.id === carro);
-    carriño.push(carrito)
-
-    // const divs = document.getElementsByTagName("div"); //no lo usamos ya que no apuntamos a algo ya creado en html
-
-} while (confirm("¿Desea seguir agregando productos?"));
-for (const producto of carriño) {
-    let contenedor = document.createElement("div");
-    //Definimos el innerHTML del elemento con una plantilla de texto
-    contenedor.innerHTML = `<div class="card" 
-    <h3> ID: ${producto.producto}</h3>
-    <p>  Producto: ${producto.nombre}</p>
-    <b> $ ${producto.precio}</b>
-    </div>`;
-    document.body.appendChild(contenedor);
+// constructor
+  const newItem ={
+    tittle: itemTitle,
+    precio: itemPrice,
+    img: itemImg,
+    cantidad: 1
+  }
+  addItemCarrito(newItem)//funcion
 }
 
-let voucher = -200
-const cupon= prompt("ingresa el cupon de descuento").toLowerCase() 
+// pusheo al array de objetos, cada click va cargar el objeto al carrito
+function addItemCarrito(newItem){
 
-
-if (cupon == "cupon200") {
-// cuando aplica el cupon valido
-    const sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, voucher);
-    alert("¡CUPON VALIDO, TIENE $200 DE DESCUENTO!\n\nEl costa total de su pedido es de $"+ sumatotal)
-    let precioDescuento = document.createElement("div")
-
-    precioDescuento.innerHTML = `<div class="precio" 
-    <h2> Costo TOTAL $ ${sumatotal} CUPON200 le genero un descuento de $200, gracias por aplicarlo</h2>
-    `
-    document.body.appendChild(precioDescuento);
-
-} else {
-// Cuando aplica el cupon invalido
-    const sumatotal = carriño.map(item => item.precio).reduce((prev, curr) => prev + curr, 0);
-    alert("¡CUPON INVALIDO!\n\nEl costa total de su pedido es de $"+ sumatotal)
-
-    let precioDescuento = document.createElement("div")
-    precioDescuento.innerHTML = `<div class="precio" 
-    <h2> Costo TOTAL $ ${sumatotal} Gracias por la compra</h2>
-    `
-    document.body.appendChild(precioDescuento);
+  carrito.push(newItem)
+ //cargo todo correctamente los objos al array carrito
+ console.log(carrito);//array de objetos por log
+  renderCarrito()
 }
 
+function renderCarrito () { //renderizar los datos en la seccion de carrito, con esta funcion busco eso
+  tbody.innerHTML = `` //el tbody va decir cada vez que ejecuto esta accion va estar vacia
 
-console.log(carriño);
+  carrito.map (item =>{
+  const tr = document.createElement (`tr`);//creamos el tr, que se encuentra dentro del tbody
+  tr.classList.add (`itemCarrito`) //al tr creado mediante classList.add le agrego la clase itemcarrito de forma dinamica, sirve para trabajar con el carro
+  const content = `
+  
+
+  <th scope="row">1</th>
+            <td class="table__productos"><img src=${item.img} alt="" width="100px" height="100px">
+              <h6 class="title">${item.tittle}</h6></td>
+
+            <td class="table__price"><p>${item.precio}</p></td>
+            <td class="table__Cantidad">
+             <input type="number" min="1" value=${item.cantidad}>
+             <button class="delete btn btn-danget xred">X</button>
+              </td>
+
+  `
+  //para que al agregar los objetos y los pinte en el carro en forma de tabla, desde el html traer la tabla creada
+
+  tr.innerHTML = content //al tr le agregamos el contenido dinamico de la const content
+  tbody.append(tr) //en el cuerpo del html (tbody) agregamos el contenido dinamico creado con tr.innerHTML (todo lo que esta dentro de content)
+})
+}
+
 
 

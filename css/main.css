@@ -1,11 +1,11 @@
 body{
-  background-image:url(https://previews.123rf.com/images/gurza/gurza1403/gurza140300009/27485562-la-tienda-de-bebidas-alcoh%C3%B3licas-vector.jpg);
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-h1, h2, .precio, .card{
+h1, h2, .precio, .card1{
   box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
 -webkit-box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
 -moz-box-shadow: 44px 27px 41px -4px rgba(79,79,79,1);
@@ -24,10 +24,9 @@ h1, h2{
   font-size: 30px;
   text-align: center;
   background-color:white;
-  border-radius: 2px 30px 30px 30px;
+  border-radius: 30px 30px 30px 30px;
   color: #FFFFFF;
   background: #333333;
-  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
   color: #FFFFFF;
   background: #333333;
   
@@ -43,10 +42,53 @@ h1, h2{
   border-radius: 2px 30px 30px 30px;
 }
 
-.card{
+.card1{
   font-size: 20px;
   margin-top: 20px;
   background-color: white;
   border-radius: 2px 30px 30px 15px;
 
+}
+
+.card{
+  display: grid;
+  justify-content: center;
+  margin-left: 15px;
+  margin-top: 15px;
+  display: inline;
+  justify-content: center;
+
+}
+
+.contenedor__Bebidas{
+  width: 900px;
+  height: 400px;
+}
+
+.bebidas{
+  width: 100%;
+  height: 80vh
+  
+}
+
+.contenedor__carrito{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.contenedor__carrito1{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+.btn-succes{
+  display: -ms-flexbox;
+  justify-content: center;
+  background-color: green;
+}
+
+button .xred {
+  background-color: red;
 }
