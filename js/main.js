@@ -28,6 +28,7 @@ function addToCarritoItem(e) {
     cantidad: 1
   }
   addItemCarrito(newItem)//funcion
+  
 }
 
 // pusheo al array de objetos, cada click va cargar el objeto al carrito
@@ -41,8 +42,9 @@ function addItemCarrito(newItem){
       const inputValue = inputElement[i]
       inputValue.value++
       carritoTotal()
-
-      return null; //de esta forma no se va ejectutar el push ni el render, simplemente va salir de la funcion
+ 
+     return null;  //de esta forma no se va ejectutar el push ni el render, simplemente va salir de la funcion
+     
     }
 
   }
@@ -51,6 +53,7 @@ function addItemCarrito(newItem){
  //cargo todo correctamente los objos al array carrito
  console.log(carrito);//array de objetos por log
   renderCarrito()
+
 }
 
 function renderCarrito () { //renderizar los datos en la seccion de carrito, con esta funcion busco eso
@@ -84,6 +87,7 @@ function renderCarrito () { //renderizar los datos en la seccion de carrito, con
   tr.querySelector(".input__elemento").addEventListener(`change`, sumaCantidad)
 })
 carritoTotal()
+
 }
 // funcion suma total
 function carritoTotal(){
@@ -92,11 +96,11 @@ function carritoTotal(){
   carrito.forEach((item)=>{
     const precio = Number(item.precio.replace("$",``))
     total = total + precio*item.cantidad
-
   
   })
   itemCartTotal.innerHTML = `total $${total}`
   addLocalStorage()
+
 }
 // boton remover item carrito
 function removeItemCarrito(e){
@@ -106,33 +110,48 @@ function removeItemCarrito(e){
   for(let i = 0; i<carrito.length; i ++){
     if(carrito[i].tittle.trim() === tittle.trim()){
     carrito.splice(i, 1)
+
   }
 }
+
+  
   tr.remove()
+  desectructurar(carrito)
   carritoTotal()
+
 }
 // sumar items carrito
 function sumaCantidad(e){
   const sumaInput = e.target
   const tr = sumaInput.closest(".itemCarrito")
   const tittle=tr.querySelector(`.title`).textContent
+  
+
   carrito.forEach(item =>{
     if(item.tittle.trim()===tittle){
-     sumaInput.value <1 ? (sumaInput.value = 1): sumaInput.value
+     sumaInput.value <1 ? (sumaInput.value = 1): sumaInput.value //OPERADOR TERNARIO
       item.cantidad = sumaInput.value
       carritoTotal()
-      
+   
     }
+   
+
   })
-  console.log(carrito);
+
+  console.log(carrito)
+
 }
 
+  //  destructuracion
+ let desectructurar= (trae) => {
+       const [{tittle, precio}] = trae
+       console.log(tittle, precio)
+   }
 
 // storage
 
 function addLocalStorage(){
   localStorage.setItem(`carrito`,JSON.stringify(carrito))
-
 }
 
 window.onload = function(){
@@ -142,6 +161,5 @@ window.onload = function(){
     renderCarrito()
   }
 }
-
 
 
