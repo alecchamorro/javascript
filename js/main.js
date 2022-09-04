@@ -11,6 +11,15 @@ clickbutton.forEach(btn =>{
 // array de objetos
 let carrito = []
 
+// pd, 80% del precio son impuestos xD
+const tasa = {
+  comisionVenta: 5,
+  moderadores: 5,
+  iva: 21,
+  impPais: 8,
+  impGanancia: 45
+}
+
 
 // funcion para capturar informacion del HTML
 function addToCarritoItem(e) {
@@ -33,15 +42,18 @@ function addToCarritoItem(e) {
 
 // pusheo al array de objetos, cada click va cargar el objeto al carrito
 function addItemCarrito(newItem){
-
+  productoAgregado()
   const inputElement = tbody.getElementsByClassName(`input__elemento`)
   for (let i=0; i< carrito.length; i++){
+    
     if(carrito[i].tittle.trim()===newItem.tittle.trim()){
       //trim va quitar todos los espacion que estan a los lados, de esta forma g quedan iguales
       carrito[i].cantidad++//cada vez que esta condicion se cumpla entonces se va sumar
       const inputValue = inputElement[i]
       inputValue.value++
+     
       carritoTotal()
+      
  
      return null;  //de esta forma no se va ejectutar el push ni el render, simplemente va salir de la funcion
      
@@ -78,6 +90,7 @@ function renderCarrito () { //renderizar los datos en la seccion de carrito, con
               </td>
 
   `
+
   //para que al agregar los objetos y los pinte en el carro en forma de tabla, desde el html traer la tabla creada
 
   tr.innerHTML = content //al tr le agregamos el contenido dinamico de la const content
@@ -96,10 +109,12 @@ function carritoTotal(){
   carrito.forEach((item)=>{
     const precio = Number(item.precio.replace("$",``))
     total = total + precio*item.cantidad
-  
+
+
   })
   itemCartTotal.innerHTML = `total $${total}`
   addLocalStorage()
+  
 
 }
 // boton remover item carrito
@@ -111,12 +126,29 @@ function removeItemCarrito(e){
     if(carrito[i].tittle.trim() === tittle.trim()){
     carrito.splice(i, 1)
 
+  // alerta, ELIMINAR producto del carrito
+    Toastify({
+      text: "Producto eliminado del carrito",
+      duration: 1000,
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      // stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "red",
+
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
+
   }
+
 }
 
   
   tr.remove()
-  desectructurar(carrito)
+
   carritoTotal()
 
 }
@@ -125,29 +157,34 @@ function sumaCantidad(e){
   const sumaInput = e.target
   const tr = sumaInput.closest(".itemCarrito")
   const tittle=tr.querySelector(`.title`).textContent
-  
-
+ 
   carrito.forEach(item =>{
     if(item.tittle.trim()===tittle){
      sumaInput.value <1 ? (sumaInput.value = 1): sumaInput.value //OPERADOR TERNARIO
       item.cantidad = sumaInput.value
       carritoTotal()
-   
+
     }
-   
+
 
   })
-
+ 
   console.log(carrito)
 
 }
 
   //  destructuracion
  let desectructurar= (trae) => {
-       const [{tittle, precio}] = trae
-       console.log(tittle, precio)
+       const {comisionVenta, moderadores} = trae
+       console.log(`la tasa de comision por venta es de ${comisionVenta}, a esto tambien se le agrego una comision de moderador de sitio el cual es del ${moderadores}`)//pd estos datos luego lo agregare a un reduce, junto a un function que sume impuestos al costo final
    }
+   desectructurar(tasa)//llame aca la funcion ya que este dato no es esencial a la vista del usuario, si no mas bien para el moderador
 
+   const impuestos = { //spread
+    ...tasa
+}
+
+console.log(tasa);
 // storage
 
 function addLocalStorage(){
@@ -161,5 +198,21 @@ window.onload = function(){
     renderCarrito()
   }
 }
+
+// librerias
+function productoAgregado(){
+Toastify({
+  text: "Producto agregado al carrito",
+  duration: 1000,
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "left", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "green",
+  },
+  onClick: function(){} // Callback after click
+}).showToast();}
 
 
