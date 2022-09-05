@@ -136,7 +136,7 @@ function removeItemCarrito(e){
       position: "right", // `left`, `center` or `right`
       // stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
-        background: "red",
+        background: "linear-gradient(to right, #fb7777, #fe0a0a)",
 
       },
       onClick: function(){} // Callback after click
@@ -163,7 +163,20 @@ function sumaCantidad(e){
      sumaInput.value <1 ? (sumaInput.value = 1): sumaInput.value //OPERADOR TERNARIO
       item.cantidad = sumaInput.value
       carritoTotal()
-
+      
+      Toastify({
+        text: "Carrito actualizado",
+        duration: 1000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #70eefa, #0ac4fe)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     }
 
 
@@ -210,7 +223,7 @@ Toastify({
   position: "left", // `left`, `center` or `right`
   stopOnFocus: true, // Prevents dismissing of toast on hover
   style: {
-    background: "green",
+    background: "linear-gradient(to right, #7af9b0, #29fc59)",
   },
   onClick: function(){} // Callback after click
 }).showToast();}
