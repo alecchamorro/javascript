@@ -101,3 +101,27 @@ h1, h2{
   height: auto;
   margin-bottom: 15px
 }
+.contenedor__h4{
+  margin-top:20px ;
+}
+
+h4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+#lista{
+background-color: black;
+color: white;
+
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
