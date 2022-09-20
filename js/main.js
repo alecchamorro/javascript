@@ -198,6 +198,12 @@ function sumaCantidad(e){
 }
 
 console.log(tasa);
+
+
+
+// 
+
+
 // storage
 
 function addLocalStorage(){
@@ -227,5 +233,19 @@ Toastify({
   },
   onClick: function(){} // Callback after click
 }).showToast();}
+
+// fetch
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((res) => res.json())
+  .then((data) => data.forEach((info)=>{
+
+    const li = document.createElement("li")
+    li.innerHTML = `
+    <p>${info.name}</p>
+    `
+    lista.append(li)
+  }))
+
 
 
