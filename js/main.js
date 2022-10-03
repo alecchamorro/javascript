@@ -186,23 +186,6 @@ function sumaCantidad(e){
 
 }
 
-  //  destructuracion
- let desectructurar= (trae) => {
-       const {comisionVenta, moderadores} = trae
-       console.log(`la tasa de comision por venta es de ${comisionVenta}, a esto tambien se le agrego una comision de moderador de sitio el cual es del ${moderadores}`)//pd estos datos luego lo agregare a un reduce, junto a un function que sume impuestos al costo final
-   }
-   desectructurar(tasa)//llame aca la funcion ya que este dato no es esencial a la vista del usuario, si no mas bien para el moderador
-
-   const impuestos = { //spread
-    ...tasa
-}
-
-console.log(tasa);
-
-
-
-// 
-
 
 // storage
 
@@ -247,5 +230,48 @@ fetch('https://jsonplaceholder.typicode.com/users')
     lista.append(li)
   }))
 
+
+  
+// boton comprar
+const btnSearch = document.querySelector(".btn-success");
+btnSearch.addEventListener("click", () => {
+if (carrito==0){
+  swal("No hay productos en tu carrito", "agrega algun producto", "error");
+}else {
+  swal("Gracias por la compra", "En momentos recibiras mas informacion", "success");
+  carrito.length=0
+  carritoTotal()
+  renderCarrito()
+}
+ 
+});
+
+  // boton vaciar carrito
+  const btnRemove = document.querySelector(".btn-removeAll");
+
+  function Allremove(){
+  btnRemove.addEventListener("click", () => {
+
+    if(carrito==0){swal("tu carrito esta vacio", "agrega algun producto", "info");
+    }else{
+    Toastify({
+      text: "carrito Limpio",
+      duration: 1000,
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      // stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #b799ff, #ce60f2)",
+
+      },
+      onClick: function(){} // Callback after click
+    }).showToast()};
+    carrito.length=0
+    carritoTotal()
+    renderCarrito()
+
+  })}Allremove()
 
 
