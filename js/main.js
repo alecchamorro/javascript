@@ -11,15 +11,6 @@ clickbutton.forEach(btn =>{
 // array de objetos
 let carrito = []
 
-// pd, 80% del precio son impuestos xD
-const tasa = {
-  comisionVenta: 5,
-  moderadores: 5,
-  iva: 21,
-  impPais: 8,
-  impGanancia: 45
-}
-
 
 // funcion para capturar informacion del HTML
 function addToCarritoItem(e) {
